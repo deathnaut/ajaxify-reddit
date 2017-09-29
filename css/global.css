@@ -9,25 +9,59 @@ nav ul li {
   margin-top: 25px;
 }
 
-#main .container .col-md-4 {
+#main .container{
+  display: inline-block;
+}
+
+.col-image, .col-link {
+  margin: 10px 0;
 
 }
 
 .col-image {
-  margin: 10px 0;
+  width: 33%;
 }
 
 .col-link {
-  width: auto;
+  text-align: left;
+  height: 150px;
+  width: 67%;
+  max-width: 650px;
 }
 
 hr {
-  background-color: red;
-  position: fixed;
+  background-color: rgba(0, 0, 0, 0.1);
+  position: absolute;
   height: 2px;
   width: inherit;
 }
 
 .post {
+  transition: background-color .75s;
   height: 100px;
+  margin-bottom: 10px;
+}
+
+img {
+  display: inline-block;
+}
+
+a {
+  padding-left: 5px;
+  text-decoration: none;
+  display: inline-block;
+  border-bottom: 10px;
+  width: 100%;
+}
+
+a .post {
+  font-weight: bold;
+}
+
+a:hover {
+  text-decoration: none;
+}
+
+.post:hover {
+  background-color: rgba(0, 0, 0, 0.1);
 }
