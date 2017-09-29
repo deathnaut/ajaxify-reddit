@@ -3,3 +3,27 @@ nav ul li {
   list-style-type: none;
   margin-right: 25px;
 }
+
+#main {
+  text-align: center;
+  margin-top: 25px;
+}
+
+#main .container .col-md-4 {
+
+}
+
+.col-image {
+  width: 25%;
+}
+
+.col-link {
+  width: auto;
+}
+
+hr {
+  background-color: red;
+  position: fixed;
+  height: 2px;
+  width: inherit;
+}
