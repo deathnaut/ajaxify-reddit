@@ -14,7 +14,7 @@ nav ul li {
 }
 
 .col-image {
-  width: 25%;
+  margin: 10px 0;
 }
 
 .col-link {
@@ -26,4 +26,8 @@ hr {
   position: fixed;
   height: 2px;
   width: inherit;
+}
+
+.post {
+  height: 100px;
 }
