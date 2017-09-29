@@ -1,3 +1,13 @@
+body {
+  font-family: 'Raleway', sans-serif;
+  background-image: url('https://i.pinimg.com/originals/ce/ea/77/ceea7756f6b2fd0e2e3de9f94a0ba555.jpg');
+  background-attachment: fixed;
+}
+nav {
+  background-color: rgba(255, 255, 255, 0.5);
+  max-width: 600px;
+}
+
 nav ul li {
   display: inline-block;
   list-style-type: none;
@@ -7,51 +17,62 @@ nav ul li {
 #main {
   text-align: center;
   margin-top: 25px;
+  background-color: rgba(255, 255, 255, 0.5);
 }
 
 #main .container{
   display: inline-block;
 }
 
-.col-image, .col-link {
+.col-image, .col-link, .col-time {
   margin: 10px 0;
 
 }
 
 .col-image {
-  width: 33%;
+  width: 25%;
 }
 
 .col-link {
   text-align: left;
-  height: 150px;
-  width: 67%;
+  width: 50%;
   max-width: 650px;
 }
 
+.col-time {
+  width: 25%;
+  /*visibility: hidden;*/
+}
+
 hr {
-  background-color: rgba(0, 0, 0, 0.1);
+  background-color: rgba(0, 0, 0, 0.3);
   position: absolute;
   height: 2px;
-  width: inherit;
+  width: 100%;
+  max-width: 1140px;
 }
 
 .post {
-  transition: background-color .75s;
+  transition: background-color .5s;
   height: 100px;
   margin-bottom: 10px;
 }
 
-img {
-  display: inline-block;
-}
-
-a {
+a, h5, img {
   padding-left: 5px;
   text-decoration: none;
   display: inline-block;
   border-bottom: 10px;
-  width: 100%;
+  word-wrap: break-word;
+}
+
+a, h5 {
+  width: 100%
+}
+
+img {
+  display: block;
+  position: inherit;
 }
 
 a .post {
@@ -62,6 +83,14 @@ a:hover {
   text-decoration: none;
 }
 
-.post:hover {
-  background-color: rgba(0, 0, 0, 0.1);
+a.post:hover {
+  background-color: rgba(0, 0, 0, 0.3);
+}
+
+h5 {
+  margin: 0;
+  width: 100%;
+  /*padding-left: 5px;
+  margin-top: 30px;
+  font-style: italic;*/
 }

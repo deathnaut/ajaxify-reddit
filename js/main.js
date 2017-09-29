@@ -40,7 +40,7 @@ function onSuccess(response){
   // test to ensure i'm getting the data (title) from the first 'article'
   getInfo(response);
   convertToHtmlAndAppend(response);
-  getTimeAndAppend(response);
+  // getTimeAndAppend(response);
 }
 
 function onError(){
@@ -49,35 +49,42 @@ function onError(){
 
 function getInfo(response){
   var postDescription = response.data.children[0].data.title;
-  var postLink = 'https://www.reddit.com/' + response.data.children[0].data.permaLink;
+  var postLink = 'https://www.reddit.com' + response.data.children[0].data.permalink;
   var imageLink = response.data.children[0].data.url;
   console.log(postLink);
   console.log(imageLink);
 }
 
 function convertToHtmlAndAppend(response){
-  console.log('converting each item to html..');
 
   for (i = 0; i < 25; i++){
-    var postHtml = '<a href="'+ 'https://www.reddit.com/' + response.data.children[i].data.permaLink +'" class="post">' + response.data.children[i].data.title + '</a>';
-    descriptions.push(postHtml, '<h5></h5>','<br>');
-    var imageHtml = '<img src="' + response.data.children[i].data.url +'" class="post">';
-    images.push(imageHtml, '<br>');
+    var postHtml = '<a href="'+ 'https://www.reddit.com/' + response.data.children[i].data.permalink +'" class="post">' + response.data.children[i].data.title + '</a>';
+    descriptions.push(postHtml);
+    var imageHtml = '<img src="' + response.data.children[i].data.thumbnail +'" class="post">';
+    if (imageHtml === '<img src="default" class="post">' || imageHtml === '<img src="nsfw" class="post">' || imageHtml === '<img src="null" class="post">'){
+      imageHtml = '<img src="http://www.agentwp.com/wp-content/uploads/link-wordpress-post-title-to-external-url.png" class="post">'
+    }
+    images.push(imageHtml);
+    console.log(images[i], images.length);
   }
-  console.log('success');
 
-  console.log('appending each item to html..');
+  var time = 'default';
+  var user = 'default';
+
   for (j = 0; j < 25; j++){
     $('.col-link').append(descriptions[j]);
-    // $('h5').innerText("Submitted " + time + "hours ago.");
     $('.col-image').append(images[j]);
+    $('.col-time').append(`<h5 class="post">Submitted ${time} hours ago by ${user}</h5>`);
   }
-  console.log('success');
 }
 
-function getTimeAndAppend(data){
+// function getTimeAndAppend(response){
+//   // $('h5').innerText("Submitted " + time + "hours ago.");
+//   for (i = 0; i < 25; i++){
+//     $('a.post').append('<h5 class="post">Submitted time hours ago</h5>');
+//   }
 
-}
+// }
 
 
 // need to place a default image in place of where imageless
